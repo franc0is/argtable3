@@ -33,6 +33,11 @@ project(argtable3)
 
 option(argtable3_build_tests "Build argtable3 unit tests." ON)
 option(argtable3_build_examples "Build argtable3 examples." ON)
+option(argtable3_build_library "Build argtable3 as a lib." ON)
+
+if(argtable3_build_library)
+  add_library(argtable3 "argtable3.c" "argtable3.h")
+endif()
 
 if(argtable3_build_tests)
   add_subdirectory(tests)
